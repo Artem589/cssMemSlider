@@ -1,0 +1,174 @@
+
+body {
+  background: lightcyan;
+}
+
+#slider {
+   margin: 0 auto;
+   width: 65%;
+   max-width: 100%;
+   text-align: center;
+}
+#slider input[type=radio] {
+   display: none;
+}
+#slider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+#slides {
+   margin-top: 5rem;
+   padding: 10px;
+   border: 3px solid #ccc;
+   background: #fff;
+   position: relative;
+   z-index: 1;
+}
+#overflow {
+   width: 100%;
+   overflow: hidden;
+}
+#slide1:checked ~ #slides .inner {
+   margin-left: 0;
+}
+#slide2:checked ~ #slides .inner {
+   margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner {
+   margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner {
+   margin-left: -300%;
+}
+#slides .inner {
+   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 0;
+   height: 40rem;
+}
+#slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   height: 100%;
+   color: #fff;
+   padding: 2.5rem;
+
+}
+
+.slide-content {
+font-size: 2rem;
+font-weight: 700;
+align-self: flex-end;
+
+}
+
+
+#slides .slide_1 {
+
+       background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+   background-image: url(https://funfrom.me/image/e6333b60-f2b9-49d5-a29b-532813d849ea.gif);
+    color: rgb(0, 0, 0);
+
+
+}
+#slides .slide_2 {
+
+    background-repeat: no-repeat;
+  background-position: end;
+  background-size: cover;
+   background-image: url(https://i.gifer.com/embedded/download/EbDl.gif);
+  color: rgb(243, 250, 32);
+
+
+
+}
+#slides .slide_3 {
+        background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+   background-image: url(https://carpet-pro.ru/uploads/s/v/f/h/vfh5suyiccz8/img/autocrop/726b53bb572f67f94fc8364430b97114.gif);
+    color: rgb(252, 244, 244);
+
+}
+#slides .slide_4 {
+    background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+   background-image: url(https://cdn.dribbble.com/users/239755/screenshots/3019824/dave_coding_dribbble.gif);
+   color: rgb(254, 18, 18);
+}
+#controls {
+   margin: -11.25rem 0 0 0;
+   width: 100%;
+   height: 3.125rem;
+   z-index: 3;
+   position: relative;
+}
+#controls label {
+   transition: opacity 0.2s ease-out;
+   display: none;
+   width: 3.125rem;
+   height: 3.125rem;
+   opacity: .4;
+}
+#controls label:hover {
+   opacity: 1;
+}
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4),
+#slide4:checked ~ #controls label:nth-child(1) {
+   background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
+   float:right;
+   margin: 0 -3.125rem 0 0;
+   display: block;
+}
+#slide1:checked ~ #controls label:nth-last-child(2),
+#slide2:checked ~ #controls label:nth-last-child(3),
+#slide3:checked ~ #controls label:nth-last-child(4),
+#slide4:checked ~ #controls label:nth-last-child(1) {
+   background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
+   float:left;
+   margin: 0 0 0 -3.125rem;
+   display: block;
+}
+#bullets {
+   margin: 9.375rem 0 0;
+   text-align: center;
+}
+#bullets label {
+   display: inline-block;
+   width: 1.25rem;
+   height: 1.25rem;
+   border-radius:100%;
+   /* background: #ccc; */
+   margin: 0 0.625rem;
+   border: 0.125rem solid #000;
+}
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+   background: #444;
+}
+@media screen and (max-width: 900px) {
+   #slide1:checked ~ #controls label:nth-child(2),
+   #slide2:checked ~ #controls label:nth-child(3),
+   #slide3:checked ~ #controls label:nth-child(4),
+   #slide4:checked ~ #controls label:nth-child(1),
+   #slide1:checked ~ #controls label:nth-last-child(2),
+   #slide2:checked ~ #controls label:nth-last-child(3),
+   #slide3:checked ~ #controls label:nth-last-child(4),
+   #slide4:checked ~ #controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   #slides {
+      max-width: calc(100% - 8.75rem);
+      margin: 0 auto;
+   }
+}
